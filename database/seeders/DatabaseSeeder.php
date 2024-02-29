@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         if (!app()->environment('production')) {
-            \App\Models\User::factory()->create([
+            $user = \App\Models\User::factory()->create([
                 'name' => 'Developer User',
                 'email' => 'dev@abc.com',
             ]);
