@@ -36,13 +36,13 @@ class Sale extends Model
     /**
      * Get the total amount of the sale.
      */
-    public function total(): float
+    public function total(): string
     {
         $sum = 0;
         foreach ($this->products as $product) {
             $sum += ($product->price * $product->pivot->quantity);
         }
 
-        return $sum;
+        return number_format($sum, 2, '.', '');
     }
 }
