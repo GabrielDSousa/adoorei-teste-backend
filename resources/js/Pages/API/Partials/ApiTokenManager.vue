@@ -97,20 +97,6 @@ const deleteApiToken = () => {
                     />
                     <InputError :message="createApiTokenForm.errors.name" class="mt-2" />
                 </div>
-
-                <!-- Token Permissions -->
-                <div v-if="availablePermissions.length > 0" class="col-span-6">
-                    <InputLabel for="permissions" value="Permissions" />
-
-                    <div class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div v-for="permission in availablePermissions" :key="permission">
-                            <label class="flex items-center">
-                                <Checkbox v-model:checked="createApiTokenForm.permissions" :value="permission" />
-                                <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">{{ permission }}</span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
             </template>
 
             <template #actions>
